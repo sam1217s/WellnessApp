@@ -1,0 +1,25 @@
+{
+  "name": "wellness-app",
+  "version": "1.0.0",
+  "description": "Aplicación de Monitoreo del Bienestar Físico Laboral",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4",
+    "vue-router": "^4.2.4",
+    "pinia": "^2.1.6",
+    "chart.js": "^4.4.0",
+    "vue-chartjs": "^5.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "vite": "^4.4.9"
+  },
+  "keywords": ["vue", "wellness", "health", "workplace"],
+  "author": "Tu Nombre",
+  "license": "MIT"
+}
