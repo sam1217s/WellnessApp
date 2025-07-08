@@ -1,16 +1,26 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/_redirects',
+          dest: '.' // se copia a dist/
+        }
+      ]
+    })
+  ],
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
   },
   server: {
-    // port: 3000,  //puede elegir el puerto que desee
     open: true,
     host: true
   },
