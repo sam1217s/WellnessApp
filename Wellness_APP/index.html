@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WellnessApp - Monitoreo Inteligente de Bienestar Laboral</title>
+  <meta name="description" content="Aplicación de monitoreo del bienestar físico para mejorar la salud de los trabajadores">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💚</text></svg>">
+  
+  <!-- Meta tags para SEO -->
+  <meta name="keywords" content="bienestar laboral, salud ocupacional, monitoreo de salud, wearables, wellness">
+  <meta name="author" content="WellnessApp">
+  
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="WellnessApp - Monitoreo Inteligente de Bienestar Laboral">
+  <meta property="og:description" content="Mejora la salud y bienestar de tu equipo con nuestra plataforma de monitoreo inteligente">
+  <meta property="og:type" content="website">
+  
+  <style>
+    /* Loading styles */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .loading-content {
+      text-align: center;
+      animation: fadeInUp 0.6s ease-out;
+    }
+    
+    .loading-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+      animation: pulse 2s infinite;
+    }
+    
+    .loading-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 8px;
+    }
+    
+    .loading-subtitle {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 32px;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #e5e7eb;
+      border-top: 4px solid #2563eb;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* Hide loading when Vue app is loaded */
+    .loaded #loading {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div class="loading-content">
+      <div class="loading-icon">💚</div>
+      <div class="loading-title">WellnessApp</div>
+      <div class="loading-subtitle">Cargando tu experiencia de bienestar...</div>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+  
+  <!-- Vue App Mount Point -->
+  <div id="app"></div>
+  
+  <!-- Scripts -->
+  <script type="module" src="../src/main.js"></script>
+  
+  <script>
+    // Hide loading screen when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+      }, 1500);
+    });
+    
+    // Progressive Web App Support
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        // Service worker registration would go here for PWA support
+        console.log('WellnessApp loaded successfully!');
+      });
+    }
+  </script>
+</body>
+</html>
