@@ -10,7 +10,7 @@ export default defineConfig({
       targets: [
         {
           src: 'public/_redirects',
-          dest: '.' // se copia a dist/
+          dest: '.'  // Copia el archivo a /dist
         }
       ]
     })
